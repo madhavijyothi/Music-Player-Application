@@ -13,14 +13,16 @@ public class Main {
         album.addSong("TNT",4.5);
         album.addSong("Highway to hell",3.5);
         album.addSong("ThunderStruck",5.0);
+        
+        // Added Album in a Arraylist
         albums.add(album);
 
         album = new Album("Album2","Eminem");
-
         album.addSong("Rap god",4.5);
         album.addSong("Not Afraid",3.5);
         album.addSong("Lose yourself",4.5);
 
+        // Added Album in a Arraylist
         albums.add(album);
 
         LinkedList<Song> playList_1 = new LinkedList<>();
@@ -41,7 +43,7 @@ public class Main {
         ListIterator<Song> listIterator = playList.listIterator();
 
         if(playList.size() == 0){
-            System.out.println("This playlist have no song");
+            System.out.println("This Playlist have no Song");
         }else {
             System.out.println("Now playing " + listIterator.next().toString());
             printMenu();
@@ -54,10 +56,11 @@ public class Main {
             switch (action){
 
                 case 0:
-                    System.out.println("Playlist complete");
+                    System.out.println("Playlist Complete...");
+                    System.out.println("********Thanks for Visit my Music App***********");
                     quit = true;
                     break;
-
+                    
                 case 1:
                     if(!forward){
                         if(listIterator.hasNext()){
@@ -68,7 +71,7 @@ public class Main {
                     if(listIterator.hasNext()){
                         System.out.println("Now playing "+listIterator.next().toString());
                     }else {
-                        System.out.println("no song availble, reached to the end of the list");
+                        System.out.println("No song availble, reached to the end of the list");
                         forward = false;
                     }
                     break;
@@ -82,7 +85,7 @@ public class Main {
                     if(listIterator.hasPrevious()){
                         System.out.println("Now playing "+listIterator.previous().toString());
                     }else {
-                        System.out.println("we are the first song");
+                        System.out.println("You are the first song");
                         forward = false;
                     }
                     break;
@@ -93,14 +96,14 @@ public class Main {
                             System.out.println("Now playing "+listIterator.previous().toString());
                             forward = false;
                         }else {
-                            System.out.println("we are at the start of the list");
+                            System.out.println("You are at the start of the list");
                         }
                     }else {
                         if(listIterator.hasNext()){
                             System.out.println("now playing "+listIterator.next().toString());
                             forward = true;
                         }else {
-                            System.out.println("we have reached to the end of list");
+                            System.out.println("You have reached to the end of list");
                         }
                     }
                     break;
@@ -115,11 +118,11 @@ public class Main {
                     if (playList.size() >0){
                         listIterator.remove();
                         if(listIterator.hasNext()){
-                            System.out.println("now playing "+listIterator.next().toString());
+                            System.out.println("Now playing "+listIterator.next().toString());
                         }
                         else {
                             if(listIterator.hasPrevious())
-                            System.out.println("now playing "+listIterator.previous().toString());
+                            System.out.println("Now playing "+listIterator.previous().toString());
                         }
                     }
 
@@ -128,25 +131,24 @@ public class Main {
     }
 
     private static void printMenu(){
-        System.out.println("Available options\n press");
-        System.out.println("0 - to quit\n"+
-                "1 - to play next song\n"+
-                "2 - to play previous song\n"+
-                "3 - to replay the current song\n"+
+        System.out.println("Available Options Are Below : ");
+        System.out.println("0 - to Quit\n"+
+                "1 - to Play Next Song\n"+
+                "2 - to Play Previous Song\n"+
+                "3 - to Replay the Current Song\n"+
                 "4 - list of all songs \n"+
-                "5 - print all available options\n"+
-                "6 - delete current song");
+                "5 - Print all Available Options\n"+
+                "6 - Delete Current Song");
     }
 
     private static void printList(LinkedList<Song> playList){
         Iterator<Song> iterator = playList.iterator();
-        System.out.println("-----------------");
+        System.out.println("<------------------------------------->");
 
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
 
-        System.out.println("-----------------");
+        System.out.println("<------------------------------------->");
     }
-
 }
